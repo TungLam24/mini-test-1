@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let num = prompt("Enter number:")
+    let arr = num.split(",")
+    let primeArr = []
+    let total = 0
+    function isPrime(x) {
+        for (i = 2; i < x + 1; i++) {
+            if (i < x - 2 && x % i == 0) {
+                break
+            } else if (x / i == 1) {
+                primeArr.push(x)
+            }
+        }
+    }
+    for (a of arr) {
+        isPrime(a)
+    }
+    for (i of primeArr) {
+        total += +i
+    }
+    document.write("Average of prime numbers is: " + total/primeArr.length)
+</script>
